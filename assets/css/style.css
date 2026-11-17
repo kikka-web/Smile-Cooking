@@ -8,8 +8,8 @@
   --color-base: #FFFFFF;          /* ベース：白 */
   --color-main: #047857;          /* メイン：エメラルドグリーン */
   --color-main-dark: #065F46;
-  --color-accent: #C2410C;        /* アクセント：オレンジ（ボタン専用） */
-  --color-accent-dark: #9A3412;
+  --color-accent: #FFCE1F;        /* アクセント：イエロー（ボタン専用） */
+  --color-accent-dark: #F0B800;
   --color-sub: #ECFDF5;           /* 補助：薄いグリーン */
   --color-text: #111111;          /* 文字：黒 */
   --color-text-sub: #444444;
@@ -118,7 +118,7 @@ a {
   display: inline-block;
   padding: 16px 48px;
   background: var(--color-accent);
-  color: #FFFFFF;
+  color: var(--color-text);
   border: none;
   border-radius: 0;
   font-family: inherit;
@@ -132,7 +132,7 @@ a {
 .button:hover,
 .button:focus-visible {
   background: var(--color-accent-dark);
-  color: #FFFFFF;
+  color: var(--color-text);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
