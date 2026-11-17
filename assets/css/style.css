@@ -1,0 +1,417 @@
+/* ==========================================
+   Smile Cooking（親子料理スクール）
+   ========================================== */
+
+/* ---------- 変数 ---------- */
+:root {
+  /* 色 */
+  --color-base: #FFFFFF;          /* ベース：白 */
+  --color-main: #047857;          /* メイン：エメラルドグリーン */
+  --color-main-dark: #065F46;
+  --color-accent: #C2410C;        /* アクセント：オレンジ（ボタン専用） */
+  --color-accent-dark: #9A3412;
+  --color-sub: #ECFDF5;           /* 補助：薄いグリーン */
+  --color-text: #111111;          /* 文字：黒 */
+  --color-text-sub: #444444;
+  --color-border: #E5E5E5;
+  --color-input-border: #8A8A8A;
+
+  /* フォント */
+  --font-heading: 'Zen Maru Gothic', sans-serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+
+  /* 余白 */
+  --space-section: 96px;          /* セクション上下 */
+  --space-side: 24px;             /* 左右の最低余白 */
+  --content-width: 1200px;
+}
+
+/* ---------- ベース ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-base);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-main);
+}
+
+/* ---------- 共通：セクション ---------- */
+.section {
+  padding: var(--space-section) var(--space-side);
+  background: var(--color-base);
+}
+
+.section--tint {
+  background: var(--color-sub);
+}
+
+.section__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.section__inner--narrow {
+  max-width: 960px;
+  gap: 40px;
+}
+
+.section__inner--form {
+  max-width: 640px;
+  gap: 40px;
+}
+
+/* ---------- 共通：見出し ---------- */
+.section-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.section-title__en {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(36px, 4.4vw, 52px);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.section-title__ja {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-main);
+  letter-spacing: 0.2em;
+}
+
+/* ---------- 共通：ボタン（CTA） ---------- */
+.button {
+  align-self: center;
+  display: inline-block;
+  padding: 16px 48px;
+  background: var(--color-accent);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--color-accent-dark);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.button--large {
+  padding: 16px 72px;
+  min-height: 52px;
+  font-size: 17px;
+}
+
+/* 押せないボタン（見た目はそのまま、ホバーで動かない） */
+.button--disabled,
+.button--disabled:hover {
+  background: var(--color-accent);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- Header ---------- */
+.header {
+  background: var(--color-main);
+  color: #FFFFFF;
+}
+
+.header__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 18px var(--space-side);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.header__logo {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 32px;
+}
+
+.header__nav-link {
+  padding: 12px 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.header__nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+  padding: var(--space-section) var(--space-side);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* 背景画像：クッキー */
+  background: #2F3B35 url("../images/hero-.jpeg") center / cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hero__title {
+  position: relative;
+  margin: 0;
+  padding: 20px 48px;
+  background: var(--color-base);
+  color: var(--color-main);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(28px, 4.5vw, 60px);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+/* ---------- Course ---------- */
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-base);
+  border: 1px solid var(--color-border);
+}
+
+.course-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.course-card__body {
+  flex-grow: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.course-card__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+}
+
+.course-card__text {
+  margin: 0;
+  color: var(--color-text-sub);
+}
+
+/* ---------- News ---------- */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  display: flex;
+  border: 1px solid var(--color-main);
+  background: var(--color-base);
+}
+
+.news-item__date {
+  flex: 0 0 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 16px;
+  background: var(--color-main);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.news-item__title {
+  flex: 1;
+  padding: 18px 24px;
+  background: var(--color-base);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ---------- Contact ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form__label {
+  font-size: 15px;
+}
+
+.contact-form__input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-base);
+  border: 1px solid var(--color-input-border);
+  border-radius: 0;
+}
+
+.contact-form__input:focus {
+  outline: 2px solid var(--color-main);
+  outline-offset: 1px;
+}
+
+.contact-form__input--textarea {
+  resize: vertical;
+}
+
+.contact-form__submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* ---------- Footer ---------- */
+/* flex-grow で残りの高さを埋め、下に白い余白を出さない */
+.footer {
+  flex-grow: 1;
+  padding: 32px var(--space-side);
+  background: var(--color-main);
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- レスポンシブ（768px 以下：スマホ） ---------- */
+@media (max-width: 768px) {
+  :root {
+    --space-section: 64px;
+    --space-side: 16px;
+  }
+
+  .header__logo {
+    font-size: 22px;
+  }
+
+  .header__nav {
+    gap: 4px 24px;
+  }
+
+  .hero {
+    min-height: 420px;
+  }
+
+  .hero__title {
+    padding: 16px 24px;
+  }
+
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card__body {
+    padding: 24px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-item__date {
+    flex-basis: auto;
+    padding: 10px 16px;
+  }
+
+  .news-item__title {
+    padding: 14px 16px;
+  }
+}

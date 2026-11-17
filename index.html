@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smile Cooking｜親子料理スクール</title>
+  <meta name="description" content="親子料理スクール Smile Cooking。お料理・パン作り・お菓子作りのコースを、親子で楽しく学べます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#top" class="header__logo">Smile Cooking</a>
+      <nav class="header__nav" aria-label="メインメニュー">
+        <a href="#courses" class="header__nav-link">Course</a>
+        <a href="#news" class="header__nav-link">News</a>
+        <a href="#contact" class="header__nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero（背景画像は assets/css/style.css の .hero で指定） -->
+    <section id="top" class="hero">
+      <h1 class="hero__title">Smile Cooking</h1>
+    </section>
+
+    <!-- Course -->
+    <section id="courses" class="section">
+      <div class="section__inner">
+        <h2 class="section-title">
+          <span class="section-title__en">Course</span>
+          <span class="section-title__ja">コース</span>
+        </h2>
+
+        <div class="course-list">
+          <article class="course-card">
+            <img src="assets/images/cooking.jpeg" alt="ケチャップでハートを描いたオムライス" class="course-card__image" width="800" height="500">
+            <div class="course-card__body">
+              <h3 class="course-card__title">お料理コース</h3>
+              <p class="course-card__text">親子で基本的な料理のテクニックを学びながら、一緒に楽しい時間を過ごしましょう。旬の食材を使ったメニューやバランスの取れた食事を作るコツを学べます。はじめて料理をするお子様にも安全に取り組んでいただけます。</p>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img src="assets/images/pan.jpeg" alt="焼きたてのロールパン" class="course-card__image" width="800" height="500">
+            <div class="course-card__body">
+              <h3 class="course-card__title">パン作りコース</h3>
+              <p class="course-card__text">ふっくらとした美味しいパンを親子で一緒に作りましょう！生地作りから焼き上げまでのプロセスを楽しく学び、自宅でも再現できるレシピをご紹介します。手作りのパンで毎日の食卓をもっと楽しく、豊かにできます。</p>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img src="assets/images/cake.jpeg" alt="クリームといちごをのせたカップケーキ" class="course-card__image" width="800" height="500">
+            <div class="course-card__body">
+              <h3 class="course-card__title">お菓子作りコース</h3>
+              <p class="course-card__text">親子でスイーツ作りを楽しみましょう。簡単で可愛らしいお菓子から、ちょっとしたチャレンジレシピまで、多彩なメニューを用意しています。特別な日のためのデザートや日常のおやつ作りを通して、お子様との絆が深まります。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section id="news" class="section section--tint">
+      <div class="section__inner section__inner--narrow">
+        <h2 class="section-title">
+          <span class="section-title__en">News</span>
+          <span class="section-title__ja">新着情報</span>
+        </h2>
+
+        <ul class="news-list">
+          <li class="news-item">
+            <time class="news-item__date" datetime="2024-06-15">2024/6/15</time>
+            <span class="news-item__title">七夕イベントのお知らせ</span>
+          </li>
+          <li class="news-item">
+            <time class="news-item__date" datetime="2024-02-23">2024/2/23</time>
+            <span class="news-item__title">お友達紹介キャンペーンについて</span>
+          </li>
+          <li class="news-item">
+            <time class="news-item__date" datetime="2023-12-01">2023/12/1</time>
+            <span class="news-item__title">年末年始の開講日のご案内</span>
+          </li>
+        </ul>
+
+        <a href="#news" class="button">一覧を見る</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section__inner section__inner--form">
+        <h2 class="section-title">
+          <span class="section-title__en">Contact</span>
+          <span class="section-title__ja">お問い合わせ</span>
+        </h2>
+
+        <!-- 送信機能は未実装（見た目のみ） -->
+        <form class="contact-form" novalidate>
+          <div class="contact-form__group">
+            <label for="contact-name" class="contact-form__label">お名前</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" class="contact-form__input">
+          </div>
+          <div class="contact-form__group">
+            <label for="contact-email" class="contact-form__label">メールアドレス</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" class="contact-form__input">
+          </div>
+          <div class="contact-form__group">
+            <label for="contact-message" class="contact-form__label">お問い合わせ内容</label>
+            <textarea id="contact-message" name="message" rows="6" class="contact-form__input contact-form__input--textarea"></textarea>
+          </div>
+          <div class="contact-form__submit">
+            <button type="button" class="button button--large button--disabled" disabled>送信</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__copy">@Smile Cooking</p>
+  </footer>
+
+</body>
+</html>
